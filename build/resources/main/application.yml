@@ -9,21 +9,34 @@ server:
 
 spring:
   profiles:
-    active: datasource
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://localhost:3306/security?serverTimezone=Asia/Seoul
-#    username: ssafy
-#    password: ssafy
+    active: local
+    include:
+      - datasource
+      - oauth2
+  #  datasource:
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  #    url:
+  #    username:
+  #    password:
 
-#  mvc:
-#    view:
-#      prefix: /templates/
-#      suffix: .mustache
+  #  mvc:
+  #    view:
+  #      prefix: /templates/
+  #      suffix: .mustache
+
+  #  security:
+  #    oauth2:
+  #      client:
+  #        registration:
+  #          google:
+  #            client-id:
+  #            client-secret:
+  #            scope:
 
   jpa:
     hibernate:
-      ddl-auto: none #create update none
+      ddl-auto: update #create update none
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
+

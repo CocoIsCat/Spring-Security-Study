@@ -4,3 +4,14 @@ spring:
     url: jdbc:mysql://localhost:3306/security?serverTimezone=Asia/Seoul
     username: ssafy
     password: ssafy
+
+    security:
+      oauth2:
+        client:
+          registration:
+            google:
+              client-id: 735124530405-73h2da1u3qms0jd00q4bmei99uass24e.apps.googleusercontent.com
+              client-secret: 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
+              scope:
+                - email
+                - profile
